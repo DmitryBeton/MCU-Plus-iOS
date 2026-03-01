@@ -13,26 +13,16 @@ struct ContentView: View {
 
     var body: some View {
         TabView {
-//            Tab("tab.news", systemImage: "newspaper") {
-//                tabScreen(title: "tab.news")
-//            }
             Tab("tab.schedule", systemImage: "calendar") {
-                ScheduleView()
+                Home()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(.mcuBackground)
+                    .preferredColorScheme(.light)
             }
-            Tab("tab.settings", systemImage: "gearshape") {
-                tabScreen(title: "tab.settings")
-            }
+//            Tab("tab.settings", systemImage: "gearshape") {
+//            }
         }
         .tint(.mcuRed)
-    }
-
-    private func tabScreen(title: LocalizedStringKey) -> some View {
-        ZStack {
-            Color.mcuGrey.ignoresSafeArea()
-            Text(title)
-                .font(.title2)
-                .foregroundStyle(.white)
-        }
     }
 }
 

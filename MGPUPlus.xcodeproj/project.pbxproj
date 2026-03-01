@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		8CCAAE6D2F3D0FE00052180D /* MGPUPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MGPUPlus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CCAAE6D2F3D0FE00052180D /* MGPUPlus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MGPUPlus.app; path = "/Users/dmitrybeton/Documents/iosProjects/MCU App/MGPUPlus/build/Debug-iphoneos/MGPUPlus.app"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -57,16 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				8CCAAE6F2F3D0FE00052180D /* MGPUPlus */,
-				8CCAAE6E2F3D0FE00052180D /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		8CCAAE6E2F3D0FE00052180D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8CCAAE6D2F3D0FE00052180D /* MGPUPlus.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -120,7 +111,7 @@
 			mainGroup = 8CCAAE642F3D0FDF0052180D;
 			minimizedProjectReferenceProxies = 1;
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 8CCAAE6E2F3D0FE00052180D /* Products */;
+			productRefGroup = 8CCAAE642F3D0FDF0052180D;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
