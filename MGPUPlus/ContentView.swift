@@ -6,11 +6,8 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-
     var body: some View {
         TabView {
             Tab("tab.schedule", systemImage: "calendar") {
@@ -24,8 +21,4 @@ struct ContentView: View {
         }
         .tint(.mcuRed)
     }
-}
-
-#Preview {
-    ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
 }
