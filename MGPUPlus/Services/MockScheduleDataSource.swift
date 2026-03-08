@@ -13,52 +13,71 @@ struct MockScheduleDataSource: ScheduleDataSource {
         }
 
         let data = try Data(contentsOf: url)
-        let templates = try JSONDecoder().decode([ScheduleTemplateDTO].self, from: data)
+        let schedule = try JSONDecoder().decode(MockCalendarDTO.self, from: data)
 
-        return templates.compactMap { template in
-            guard let startAt = makeDate(date: date, hour: template.startHour, minute: template.startMinute) else {
+        let targetDate = Self.dateOnlyFormatter.string(from: date)
+        guard let day = schedule.calendar.first(where: { $0.date == targetDate }) else {
+            return []
+        }
+
+        return day.lessons.compactMap { lesson in
+            guard let startAt = makeDate(dateString: day.date, timeString: lesson.startTime) else {
                 return nil
             }
-
-            guard let endAt = Calendar.current.date(byAdding: .minute, value: template.durationMinutes, to: startAt) else {
+            guard let endAt = makeDate(dateString: day.date, timeString: lesson.endTime) else {
                 return nil
             }
-
-            let dayStamp = Self.dayStampFormatter.string(from: date)
 
             return ScheduleDTO(
-                id: "\(template.templateID)-\(dayStamp)",
-                title: template.title,
+                id: lesson.id,
+                title: lesson.title,
                 startAt: startAt,
                 endAt: endAt,
-                teacher: template.teacher,
-                room: template.room,
-                groupName: template.groupName
+                teacher: lesson.teacher,
+                room: lesson.room,
+                groupName: lesson.groupName,
+                academicStatus: ScheduleAcademicStatus(rawValue: lesson.academicStatus) ?? .active
             )
         }
     }
 
-    private func makeDate(date: Date, hour: Int, minute: Int) -> Date? {
-        var components = Calendar.current.dateComponents([.year, .month, .day], from: date)
-        components.hour = hour
-        components.minute = minute
-        return Calendar.current.date(from: components)
+    private func makeDate(dateString: String, timeString: String) -> Date? {
+        Self.dateTimeFormatter.date(from: "\(dateString) \(timeString)")
     }
 
-    private static let dayStampFormatter: DateFormatter = {
+    private static let dateOnlyFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyyMMdd"
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone.current
+        return formatter
+    }()
+
+    private static let dateTimeFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd HH:mm"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone.current
         return formatter
     }()
 }
 
-private struct ScheduleTemplateDTO: Decodable {
-    let templateID: String
+private struct MockCalendarDTO: Decodable {
+    let calendar: [MockDayScheduleDTO]
+}
+
+private struct MockDayScheduleDTO: Decodable {
+    let date: String
+    let lessons: [MockLessonDTO]
+}
+
+private struct MockLessonDTO: Decodable {
+    let id: String
     let title: String
-    let startHour: Int
-    let startMinute: Int
-    let durationMinutes: Int
+    let startTime: String
+    let endTime: String
     let teacher: String
     let room: String
     let groupName: String
+    let academicStatus: String
 }

@@ -11,6 +11,7 @@ final class ScheduleEvent: Identifiable {
     var teacher: String
     var room: String
     var groupName: String
+    var academicStatusRaw: String?
     var updatedAt: Date
 
     init(
@@ -22,6 +23,7 @@ final class ScheduleEvent: Identifiable {
         teacher: String,
         room: String,
         groupName: String,
+        academicStatusRaw: String? = ScheduleAcademicStatus.active.rawValue,
         updatedAt: Date = Date()
     ) {
         self.id = id
@@ -32,6 +34,12 @@ final class ScheduleEvent: Identifiable {
         self.teacher = teacher
         self.room = room
         self.groupName = groupName
+        self.academicStatusRaw = academicStatusRaw
         self.updatedAt = updatedAt
+    }
+
+    var academicStatus: ScheduleAcademicStatus {
+        get { ScheduleAcademicStatus(rawValue: academicStatusRaw ?? "") ?? .active }
+        set { academicStatusRaw = newValue.rawValue }
     }
 }

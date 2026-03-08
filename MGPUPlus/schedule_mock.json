@@ -1,32 +1,1800 @@
-[
-  {
-    "templateID": "history-1",
-    "title": "История России",
-    "startHour": 9,
-    "startMinute": 0,
-    "durationMinutes": 90,
-    "teacher": "Е. В. Петрова",
-    "room": "А-214",
-    "groupName": "ИСТ-21"
-  },
-  {
-    "templateID": "english-2",
-    "title": "Английский язык",
-    "startHour": 16,
-    "startMinute": 30,
-    "durationMinutes": 90,
-    "teacher": "Н. С. Кузнецова",
-    "room": "Б-112",
-    "groupName": "ИСТ-21"
-  },
-  {
-    "templateID": "informatics-3",
-    "title": "Информатика",
-    "startHour": 18,
-    "startMinute": 30,
-    "durationMinutes": 90,
-    "teacher": "А. А. Смирнов",
-    "room": "Лаб-3",
-    "groupName": "ИСТ-21"
-  }
-]
+{
+  "semester": "Весенний семестр 2026",
+  "program": "Педагогическое образование",
+  "profile": "Информатика",
+  "calendar": [
+    {
+      "date": "2026-03-09",
+      "lessons": [
+        {
+          "id": "2026-03-09-w1",
+          "title": "Педагогика",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Е. Н. Тихонова",
+          "room": "А-105",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-09-w2",
+          "title": "Психология обучения",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "М. В. Савина",
+          "room": "А-203",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-09-w3",
+          "title": "Теория и методика обучения информатике",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "И. С. Орлова",
+          "room": "Б-302",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-09-w4",
+          "title": "Алгоритмы и структуры данных",
+          "startTime": "14:25",
+          "endTime": "15:55",
+          "teacher": "А. А. Смирнов",
+          "room": "Лаб-3",
+          "groupName": "ИО-21",
+          "academicStatus": "cancelled"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-10",
+      "lessons": [
+        {
+          "id": "2026-03-10-w1",
+          "title": "Алгоритмы и структуры данных",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "А. А. Смирнов",
+          "room": "Лаб-3",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-10-w2",
+          "title": "Программирование на Swift",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "П. Н. Соколов",
+          "room": "Лаб-2",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-11",
+      "lessons": [
+        {
+          "id": "2026-03-11-w1",
+          "title": "Математическая логика",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Т. В. Егорова",
+          "room": "Online (MS Teams)",
+          "groupName": "ИО-21",
+          "academicStatus": "online"
+        },
+        {
+          "id": "2026-03-11-w2",
+          "title": "История педагогики",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Е. В. Петрова",
+          "room": "Г-114",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-11-w3",
+          "title": "Проектирование цифрового урока",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "К. Ю. Андреев",
+          "room": "Лаб-7",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-12",
+      "lessons": [
+        {
+          "id": "2026-03-12-w1",
+          "title": "Базы данных",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Д. А. Мельников",
+          "room": "Лаб-5",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-12-w2",
+          "title": "Инклюзивное образование",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "О. Л. Никитина",
+          "room": "А-110",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-12-w3",
+          "title": "Английский для IT",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "Н. С. Кузнецова",
+          "room": "Б-112",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-12-w4",
+          "title": "Педагогика",
+          "startTime": "14:25",
+          "endTime": "15:55",
+          "teacher": "Е. Н. Тихонова",
+          "room": "А-105",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-13",
+      "lessons": [
+        {
+          "id": "2026-03-13-w1",
+          "title": "Педагогика",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Е. Н. Тихонова",
+          "room": "А-105",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-13-w2",
+          "title": "Психология обучения",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "М. В. Савина",
+          "room": "А-203",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-14",
+      "lessons": [
+        {
+          "id": "2026-03-14-s1",
+          "title": "Программирование на Swift",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "П. Н. Соколов",
+          "room": "Лаб-2",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-14-s2",
+          "title": "Математическая логика",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "Т. В. Егорова",
+          "room": "В-216",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-15",
+      "lessons": [
+
+      ]
+    },
+    {
+      "date": "2026-03-16",
+      "lessons": [
+        {
+          "id": "2026-03-16-w1",
+          "title": "Базы данных",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Д. А. Мельников",
+          "room": "Лаб-5",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-16-w2",
+          "title": "Инклюзивное образование",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "О. Л. Никитина",
+          "room": "А-110",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-17",
+      "lessons": [
+        {
+          "id": "2026-03-17-w1",
+          "title": "Педагогика",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Е. Н. Тихонова",
+          "room": "А-105",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-17-w2",
+          "title": "Психология обучения",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "М. В. Савина",
+          "room": "А-203",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-17-w3",
+          "title": "Теория и методика обучения информатике",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "И. С. Орлова",
+          "room": "Б-302",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-18",
+      "lessons": [
+        {
+          "id": "2026-03-18-w1",
+          "title": "Алгоритмы и структуры данных",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "А. А. Смирнов",
+          "room": "Лаб-3",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-18-w2",
+          "title": "Программирование на Swift",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "П. Н. Соколов",
+          "room": "Лаб-2",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-18-w3",
+          "title": "Web-технологии в образовании",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "С. И. Власов",
+          "room": "Лаб-1",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-18-w4",
+          "title": "Математическая логика",
+          "startTime": "14:25",
+          "endTime": "15:55",
+          "teacher": "Т. В. Егорова",
+          "room": "В-216",
+          "groupName": "ИО-21",
+          "academicStatus": "cancelled"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-19",
+      "lessons": [
+        {
+          "id": "2026-03-19-w1",
+          "title": "Математическая логика",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Т. В. Егорова",
+          "room": "В-216",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-19-w2",
+          "title": "История педагогики",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Е. В. Петрова",
+          "room": "Г-114",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-20",
+      "lessons": [
+        {
+          "id": "2026-03-20-w1",
+          "title": "Базы данных",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Д. А. Мельников",
+          "room": "Лаб-5",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-20-w2",
+          "title": "Инклюзивное образование",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "О. Л. Никитина",
+          "room": "А-110",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-20-w3",
+          "title": "Английский для IT",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "Н. С. Кузнецова",
+          "room": "Б-112",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-21",
+      "lessons": [
+        {
+          "id": "2026-03-21-s1",
+          "title": "Английский для IT",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Н. С. Кузнецова",
+          "room": "Б-112",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-22",
+      "lessons": [
+
+      ]
+    },
+    {
+      "date": "2026-03-23",
+      "lessons": [
+        {
+          "id": "2026-03-23-w1",
+          "title": "Математическая логика",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Т. В. Егорова",
+          "room": "В-216",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-23-w2",
+          "title": "История педагогики",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Е. В. Петрова",
+          "room": "Г-114",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-23-w3",
+          "title": "Проектирование цифрового урока",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "К. Ю. Андреев",
+          "room": "Лаб-7",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-24",
+      "lessons": [
+        {
+          "id": "2026-03-24-w1",
+          "title": "Базы данных",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Д. А. Мельников",
+          "room": "Лаб-5",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-24-w2",
+          "title": "Инклюзивное образование",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "О. Л. Никитина",
+          "room": "А-110",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-24-w3",
+          "title": "Английский для IT",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "Н. С. Кузнецова",
+          "room": "Б-112",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-24-w4",
+          "title": "Педагогика",
+          "startTime": "14:25",
+          "endTime": "15:55",
+          "teacher": "Е. Н. Тихонова",
+          "room": "А-105",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-25",
+      "lessons": [
+        {
+          "id": "2026-03-25-w1",
+          "title": "Педагогика",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Е. Н. Тихонова",
+          "room": "А-105",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-25-w2",
+          "title": "Психология обучения",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "М. В. Савина",
+          "room": "А-203",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-26",
+      "lessons": [
+        {
+          "id": "2026-03-26-w1",
+          "title": "Алгоритмы и структуры данных",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "А. А. Смирнов",
+          "room": "Лаб-3",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-26-w2",
+          "title": "Программирование на Swift",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "П. Н. Соколов",
+          "room": "Лаб-2",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-26-w3",
+          "title": "Web-технологии в образовании",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "С. И. Власов",
+          "room": "Лаб-1",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-27",
+      "lessons": [
+        {
+          "id": "2026-03-27-w1",
+          "title": "Математическая логика",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Т. В. Егорова",
+          "room": "В-216",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-27-w2",
+          "title": "История педагогики",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Е. В. Петрова",
+          "room": "Г-114",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-27-w3",
+          "title": "Проектирование цифрового урока",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "К. Ю. Андреев",
+          "room": "Лаб-7",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-27-w4",
+          "title": "Базы данных",
+          "startTime": "14:25",
+          "endTime": "15:55",
+          "teacher": "Д. А. Мельников",
+          "room": "Лаб-5",
+          "groupName": "ИО-21",
+          "academicStatus": "cancelled"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-28",
+      "lessons": [
+        {
+          "id": "2026-03-28-s1",
+          "title": "Математическая логика",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Т. В. Егорова",
+          "room": "В-216",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-28-s2",
+          "title": "Проектирование цифрового урока",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "К. Ю. Андреев",
+          "room": "Лаб-7",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-29",
+      "lessons": [
+
+      ]
+    },
+    {
+      "date": "2026-03-30",
+      "lessons": [
+        {
+          "id": "2026-03-30-w1",
+          "title": "Алгоритмы и структуры данных",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "А. А. Смирнов",
+          "room": "Лаб-3",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-30-w2",
+          "title": "Программирование на Swift",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "П. Н. Соколов",
+          "room": "Лаб-2",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-30-w3",
+          "title": "Web-технологии в образовании",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "С. И. Власов",
+          "room": "Лаб-1",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-30-w4",
+          "title": "Математическая логика",
+          "startTime": "14:25",
+          "endTime": "15:55",
+          "teacher": "Т. В. Егорова",
+          "room": "В-216",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-31",
+      "lessons": [
+        {
+          "id": "2026-03-31-w1",
+          "title": "Математическая логика",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Т. В. Егорова",
+          "room": "В-216",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-03-31-w2",
+          "title": "История педагогики",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Е. В. Петрова",
+          "room": "Г-114",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-01",
+      "lessons": [
+        {
+          "id": "2026-04-01-w1",
+          "title": "Базы данных",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Д. А. Мельников",
+          "room": "Лаб-5",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-01-w2",
+          "title": "Инклюзивное образование",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "О. Л. Никитина",
+          "room": "А-110",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-01-w3",
+          "title": "Английский для IT",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "Н. С. Кузнецова",
+          "room": "Б-112",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-02",
+      "lessons": [
+        {
+          "id": "2026-04-02-w1",
+          "title": "Педагогика",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Е. Н. Тихонова",
+          "room": "А-105",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-02-w2",
+          "title": "Психология обучения",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "М. В. Савина",
+          "room": "А-203",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-02-w3",
+          "title": "Теория и методика обучения информатике",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "И. С. Орлова",
+          "room": "Б-302",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-02-w4",
+          "title": "Алгоритмы и структуры данных",
+          "startTime": "14:25",
+          "endTime": "15:55",
+          "teacher": "А. А. Смирнов",
+          "room": "Лаб-3",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-03",
+      "lessons": [
+        {
+          "id": "2026-04-03-w1",
+          "title": "Алгоритмы и структуры данных",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "А. А. Смирнов",
+          "room": "Лаб-3",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-03-w2",
+          "title": "Программирование на Swift",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "П. Н. Соколов",
+          "room": "Лаб-2",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-04",
+      "lessons": [
+        {
+          "id": "2026-04-04-s1",
+          "title": "Психология обучения",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "М. В. Савина",
+          "room": "А-203",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-05",
+      "lessons": [
+
+      ]
+    },
+    {
+      "date": "2026-04-06",
+      "lessons": [
+        {
+          "id": "2026-04-06-w1",
+          "title": "Теория и методика обучения информатике",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "И. С. Орлова",
+          "room": "Б-302",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-06-w2",
+          "title": "Алгоритмы и структуры данных",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "А. А. Смирнов",
+          "room": "Лаб-3",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-06-w3",
+          "title": "Программирование на Swift",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "П. Н. Соколов",
+          "room": "Лаб-2",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-07",
+      "lessons": [
+        {
+          "id": "2026-04-07-w1",
+          "title": "Web-технологии в образовании",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "С. И. Власов",
+          "room": "Лаб-1",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-07-w2",
+          "title": "Математическая логика",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Т. В. Егорова",
+          "room": "В-216",
+          "groupName": "ИО-21",
+          "academicStatus": "replaced"
+        },
+        {
+          "id": "2026-04-07-w3",
+          "title": "История педагогики",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "Е. В. Петрова",
+          "room": "Г-114",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-07-w4",
+          "title": "Проектирование цифрового урока",
+          "startTime": "14:25",
+          "endTime": "15:55",
+          "teacher": "К. Ю. Андреев",
+          "room": "Лаб-7",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-08",
+      "lessons": [
+        {
+          "id": "2026-04-08-w1",
+          "title": "Проектирование цифрового урока",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "К. Ю. Андреев",
+          "room": "Лаб-7",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-08-w2",
+          "title": "Базы данных",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Д. А. Мельников",
+          "room": "Лаб-5",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-09",
+      "lessons": [
+        {
+          "id": "2026-04-09-w1",
+          "title": "Английский для IT",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Н. С. Кузнецова",
+          "room": "Б-112",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-09-w2",
+          "title": "Педагогика",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Е. Н. Тихонова",
+          "room": "А-105",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-09-w3",
+          "title": "Психология обучения",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "М. В. Савина",
+          "room": "А-203",
+          "groupName": "ИО-21",
+          "academicStatus": "cancelled"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-10",
+      "lessons": [
+        {
+          "id": "2026-04-10-w1",
+          "title": "Теория и методика обучения информатике",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "И. С. Орлова",
+          "room": "Б-302",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-10-w2",
+          "title": "Алгоритмы и структуры данных",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "А. А. Смирнов",
+          "room": "Лаб-3",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-10-w3",
+          "title": "Программирование на Swift",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "П. Н. Соколов",
+          "room": "Лаб-2",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-10-w4",
+          "title": "Web-технологии в образовании",
+          "startTime": "14:25",
+          "endTime": "15:55",
+          "teacher": "С. И. Власов",
+          "room": "Лаб-1",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-11",
+      "lessons": [
+        {
+          "id": "2026-04-11-s1",
+          "title": "Проектирование цифрового урока",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "К. Ю. Андреев",
+          "room": "Лаб-7",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-11-s2",
+          "title": "Инклюзивное образование",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "О. Л. Никитина",
+          "room": "А-110",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-12",
+      "lessons": [
+
+      ]
+    },
+    {
+      "date": "2026-04-13",
+      "lessons": [
+        {
+          "id": "2026-04-13-w1",
+          "title": "Английский для IT",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Н. С. Кузнецова",
+          "room": "Б-112",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-13-w2",
+          "title": "Педагогика",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Е. Н. Тихонова",
+          "room": "А-105",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-13-w3",
+          "title": "Психология обучения",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "М. В. Савина",
+          "room": "А-203",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-13-w4",
+          "title": "Теория и методика обучения информатике",
+          "startTime": "14:25",
+          "endTime": "15:55",
+          "teacher": "И. С. Орлова",
+          "room": "Б-302",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-14",
+      "lessons": [
+        {
+          "id": "2026-04-14-w1",
+          "title": "Теория и методика обучения информатике",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "И. С. Орлова",
+          "room": "Б-302",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-14-w2",
+          "title": "Алгоритмы и структуры данных",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "А. А. Смирнов",
+          "room": "Лаб-3",
+          "groupName": "ИО-21",
+          "academicStatus": "replaced"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-15",
+      "lessons": [
+        {
+          "id": "2026-04-15-w1",
+          "title": "Web-технологии в образовании",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "С. И. Власов",
+          "room": "Лаб-1",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-15-w2",
+          "title": "Математическая логика",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Т. В. Егорова",
+          "room": "В-216",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-15-w3",
+          "title": "История педагогики",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "Е. В. Петрова",
+          "room": "Г-114",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-16",
+      "lessons": [
+        {
+          "id": "2026-04-16-w1",
+          "title": "Проектирование цифрового урока",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "К. Ю. Андреев",
+          "room": "Лаб-7",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-16-w2",
+          "title": "Базы данных",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Д. А. Мельников",
+          "room": "Лаб-5",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-16-w3",
+          "title": "Инклюзивное образование",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "О. Л. Никитина",
+          "room": "А-110",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-16-w4",
+          "title": "Английский для IT",
+          "startTime": "14:25",
+          "endTime": "15:55",
+          "teacher": "Н. С. Кузнецова",
+          "room": "Б-112",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-17",
+      "lessons": [
+        {
+          "id": "2026-04-17-w1",
+          "title": "Английский для IT",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Н. С. Кузнецова",
+          "room": "Б-112",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-17-w2",
+          "title": "Педагогика",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Е. Н. Тихонова",
+          "room": "А-105",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-18",
+      "lessons": [
+        {
+          "id": "2026-04-18-s1",
+          "title": "Алгоритмы и структуры данных",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "А. А. Смирнов",
+          "room": "Лаб-3",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-19",
+      "lessons": [
+
+      ]
+    },
+    {
+      "date": "2026-04-20",
+      "lessons": [
+        {
+          "id": "2026-04-20-w1",
+          "title": "Проектирование цифрового урока",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "К. Ю. Андреев",
+          "room": "Лаб-7",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-20-w2",
+          "title": "Базы данных",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Д. А. Мельников",
+          "room": "Лаб-5",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-21",
+      "lessons": [
+        {
+          "id": "2026-04-21-w1",
+          "title": "Английский для IT",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Н. С. Кузнецова",
+          "room": "Б-112",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-21-w2",
+          "title": "Педагогика",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Е. Н. Тихонова",
+          "room": "А-105",
+          "groupName": "ИО-21",
+          "academicStatus": "replaced"
+        },
+        {
+          "id": "2026-04-21-w3",
+          "title": "Психология обучения",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "М. В. Савина",
+          "room": "А-203",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-22",
+      "lessons": [
+        {
+          "id": "2026-04-22-w1",
+          "title": "Теория и методика обучения информатике",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "И. С. Орлова",
+          "room": "Online (MS Teams)",
+          "groupName": "ИО-21",
+          "academicStatus": "online"
+        },
+        {
+          "id": "2026-04-22-w2",
+          "title": "Алгоритмы и структуры данных",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "А. А. Смирнов",
+          "room": "Лаб-3",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-22-w3",
+          "title": "Программирование на Swift",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "П. Н. Соколов",
+          "room": "Лаб-2",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-22-w4",
+          "title": "Web-технологии в образовании",
+          "startTime": "14:25",
+          "endTime": "15:55",
+          "teacher": "С. И. Власов",
+          "room": "Лаб-1",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-23",
+      "lessons": [
+        {
+          "id": "2026-04-23-w1",
+          "title": "Web-технологии в образовании",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "С. И. Власов",
+          "room": "Лаб-1",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-23-w2",
+          "title": "Математическая логика",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Т. В. Егорова",
+          "room": "В-216",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-24",
+      "lessons": [
+        {
+          "id": "2026-04-24-w1",
+          "title": "Проектирование цифрового урока",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "К. Ю. Андреев",
+          "room": "Лаб-7",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-24-w2",
+          "title": "Базы данных",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Д. А. Мельников",
+          "room": "Лаб-5",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-24-w3",
+          "title": "Инклюзивное образование",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "О. Л. Никитина",
+          "room": "А-110",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-25",
+      "lessons": [
+        {
+          "id": "2026-04-25-s1",
+          "title": "Инклюзивное образование",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "О. Л. Никитина",
+          "room": "А-110",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-25-s2",
+          "title": "Педагогика",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "Е. Н. Тихонова",
+          "room": "А-105",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-26",
+      "lessons": [
+
+      ]
+    },
+    {
+      "date": "2026-04-27",
+      "lessons": [
+        {
+          "id": "2026-04-27-w1",
+          "title": "Web-технологии в образовании",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "С. И. Власов",
+          "room": "Лаб-1",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-27-w2",
+          "title": "Математическая логика",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Т. В. Егорова",
+          "room": "В-216",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-27-w3",
+          "title": "История педагогики",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "Е. В. Петрова",
+          "room": "Г-114",
+          "groupName": "ИО-21",
+          "academicStatus": "cancelled"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-28",
+      "lessons": [
+        {
+          "id": "2026-04-28-w1",
+          "title": "Проектирование цифрового урока",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "К. Ю. Андреев",
+          "room": "Лаб-7",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-28-w2",
+          "title": "Базы данных",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Д. А. Мельников",
+          "room": "Лаб-5",
+          "groupName": "ИО-21",
+          "academicStatus": "replaced"
+        },
+        {
+          "id": "2026-04-28-w3",
+          "title": "Инклюзивное образование",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "О. Л. Никитина",
+          "room": "А-110",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-28-w4",
+          "title": "Английский для IT",
+          "startTime": "14:25",
+          "endTime": "15:55",
+          "teacher": "Н. С. Кузнецова",
+          "room": "Б-112",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-29",
+      "lessons": [
+        {
+          "id": "2026-04-29-w1",
+          "title": "Английский для IT",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Н. С. Кузнецова",
+          "room": "Б-112",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-29-w2",
+          "title": "Педагогика",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Е. Н. Тихонова",
+          "room": "А-105",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-04-30",
+      "lessons": [
+        {
+          "id": "2026-04-30-w1",
+          "title": "Теория и методика обучения информатике",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "И. С. Орлова",
+          "room": "Б-302",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-30-w2",
+          "title": "Алгоритмы и структуры данных",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "А. А. Смирнов",
+          "room": "Лаб-3",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-04-30-w3",
+          "title": "Программирование на Swift",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "П. Н. Соколов",
+          "room": "Лаб-2",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-01",
+      "lessons": [
+        {
+          "id": "2026-05-01-w1",
+          "title": "Web-технологии в образовании",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "С. И. Власов",
+          "room": "Лаб-1",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-05-01-w2",
+          "title": "Математическая логика",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Т. В. Егорова",
+          "room": "В-216",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-05-01-w3",
+          "title": "История педагогики",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "Е. В. Петрова",
+          "room": "Г-114",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-05-01-w4",
+          "title": "Проектирование цифрового урока",
+          "startTime": "14:25",
+          "endTime": "15:55",
+          "teacher": "К. Ю. Андреев",
+          "room": "Лаб-7",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-02",
+      "lessons": [
+        {
+          "id": "2026-05-02-s1",
+          "title": "Web-технологии в образовании",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "С. И. Власов",
+          "room": "Лаб-1",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-03",
+      "lessons": [
+
+      ]
+    },
+    {
+      "date": "2026-05-04",
+      "lessons": [
+        {
+          "id": "2026-05-04-w1",
+          "title": "Теория и методика обучения информатике",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "И. С. Орлова",
+          "room": "Б-302",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-05-04-w2",
+          "title": "Алгоритмы и структуры данных",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "А. А. Смирнов",
+          "room": "Лаб-3",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-05-04-w3",
+          "title": "Программирование на Swift",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "П. Н. Соколов",
+          "room": "Лаб-2",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-05-04-w4",
+          "title": "Web-технологии в образовании",
+          "startTime": "14:25",
+          "endTime": "15:55",
+          "teacher": "С. И. Власов",
+          "room": "Лаб-1",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-05",
+      "lessons": [
+        {
+          "id": "2026-05-05-w1",
+          "title": "Web-технологии в образовании",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "С. И. Власов",
+          "room": "Лаб-1",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-05-05-w2",
+          "title": "Математическая логика",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Т. В. Егорова",
+          "room": "В-216",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-06",
+      "lessons": [
+        {
+          "id": "2026-05-06-w1",
+          "title": "Проектирование цифрового урока",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "К. Ю. Андреев",
+          "room": "Лаб-7",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-05-06-w2",
+          "title": "Базы данных",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Д. А. Мельников",
+          "room": "Лаб-5",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-05-06-w3",
+          "title": "Инклюзивное образование",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "О. Л. Никитина",
+          "room": "А-110",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-07",
+      "lessons": [
+        {
+          "id": "2026-05-07-w1",
+          "title": "Английский для IT",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "Н. С. Кузнецова",
+          "room": "Б-112",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-05-07-w2",
+          "title": "Педагогика",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "Е. Н. Тихонова",
+          "room": "А-105",
+          "groupName": "ИО-21",
+          "academicStatus": "replaced"
+        },
+        {
+          "id": "2026-05-07-w3",
+          "title": "Психология обучения",
+          "startTime": "12:40",
+          "endTime": "14:10",
+          "teacher": "М. В. Савина",
+          "room": "А-203",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-05-07-w4",
+          "title": "Теория и методика обучения информатике",
+          "startTime": "14:25",
+          "endTime": "15:55",
+          "teacher": "И. С. Орлова",
+          "room": "Б-302",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-08",
+      "lessons": [
+        {
+          "id": "2026-05-08-w1",
+          "title": "Теория и методика обучения информатике",
+          "startTime": "09:00",
+          "endTime": "10:30",
+          "teacher": "И. С. Орлова",
+          "room": "Б-302",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        },
+        {
+          "id": "2026-05-08-w2",
+          "title": "Алгоритмы и структуры данных",
+          "startTime": "10:45",
+          "endTime": "12:15",
+          "teacher": "А. А. Смирнов",
+          "room": "Лаб-3",
+          "groupName": "ИО-21",
+          "academicStatus": "active"
+        }
+      ]
+    }
+  ]
+}

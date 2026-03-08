@@ -222,7 +222,11 @@ struct Home: View {
                 let horizontal = value.translation.width
                 let vertical = value.translation.height
                 
-                guard abs(horizontal) > abs(vertical), abs(horizontal) > 40 else {
+                guard abs(vertical) < 50 else {
+                    return
+                }
+
+                guard abs(horizontal) > 50, abs(horizontal) > abs(vertical) * 1.5 else {
                     return
                 }
                 

@@ -1,5 +1,12 @@
 import Foundation
 
+enum ScheduleAcademicStatus: String {
+    case active
+    case cancelled
+    case replaced
+    case online
+}
+
 struct ScheduleDTO {
     let id: String
     let title: String
@@ -8,6 +15,7 @@ struct ScheduleDTO {
     let teacher: String
     let room: String
     let groupName: String
+    let academicStatus: ScheduleAcademicStatus
 }
 
 protocol ScheduleDataSource {

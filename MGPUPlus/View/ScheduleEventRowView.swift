@@ -8,6 +8,9 @@ struct ScheduleEventRowView: View {
         case upcoming
         case finished
         case scheduled
+        case cancelled
+        case replaced
+        case online
     }
 
     var body: some View {
@@ -47,6 +50,7 @@ struct ScheduleEventRowView: View {
                 Text("\(startTime) - \(endTime)")
                     .font(.caption)
                     .foregroundStyle(status == .current ? .mcuRed : .mcuGrey)
+                    .strikethrough(status == .cancelled, pattern: .solid, color: .gray)
 
                 Text("\(event.teacher) · \(event.room)")
                     .font(.caption)
@@ -60,6 +64,17 @@ struct ScheduleEventRowView: View {
     }
     
     private var status: LessonStatus {
+        switch event.academicStatus {
+        case .cancelled:
+            return .cancelled
+        case .replaced:
+            return .replaced
+        case .online:
+            return .online
+        case .active:
+            break
+        }
+
         let now = Date()
         if now >= event.startAt && now < event.endAt {
             return .current
@@ -83,6 +98,12 @@ struct ScheduleEventRowView: View {
             return .gray
         case .scheduled:
             return .mcuGrey
+        case .cancelled:
+            return .gray
+        case .replaced:
+            return .orange
+        case .online:
+            return .blue
         }
     }
     
@@ -96,6 +117,12 @@ struct ScheduleEventRowView: View {
             return .mcuLightGrey.opacity(0.25)
         case .scheduled:
             return .mcuLightGrey.opacity(0.4)
+        case .cancelled:
+            return .gray.opacity(0.14)
+        case .replaced:
+            return .orange.opacity(0.16)
+        case .online:
+            return .blue.opacity(0.14)
         }
     }
     
@@ -109,6 +136,12 @@ struct ScheduleEventRowView: View {
             return "Завершено"
         case .scheduled:
             return ""
+        case .cancelled:
+            return "Отмена"
+        case .replaced:
+            return "Замена"
+        case .online:
+            return "Онлайн"
         }
     }
     
@@ -122,6 +155,12 @@ struct ScheduleEventRowView: View {
             return .gray.opacity(0.2)
         case .scheduled:
             return .clear
+        case .cancelled:
+            return .gray.opacity(0.24)
+        case .replaced:
+            return .orange.opacity(0.24)
+        case .online:
+            return .blue.opacity(0.2)
         }
     }
     
@@ -135,6 +174,12 @@ struct ScheduleEventRowView: View {
             return .gray
         case .scheduled:
             return .clear
+        case .cancelled:
+            return .gray
+        case .replaced:
+            return .orange
+        case .online:
+            return .blue
         }
     }
 
