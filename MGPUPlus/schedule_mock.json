@@ -1,0 +1,32 @@
+[
+  {
+    "templateID": "history-1",
+    "title": "История России",
+    "startHour": 9,
+    "startMinute": 0,
+    "durationMinutes": 90,
+    "teacher": "Е. В. Петрова",
+    "room": "А-214",
+    "groupName": "ИСТ-21"
+  },
+  {
+    "templateID": "english-2",
+    "title": "Английский язык",
+    "startHour": 16,
+    "startMinute": 30,
+    "durationMinutes": 90,
+    "teacher": "Н. С. Кузнецова",
+    "room": "Б-112",
+    "groupName": "ИСТ-21"
+  },
+  {
+    "templateID": "informatics-3",
+    "title": "Информатика",
+    "startHour": 18,
+    "startMinute": 30,
+    "durationMinutes": 90,
+    "teacher": "А. А. Смирнов",
+    "room": "Лаб-3",
+    "groupName": "ИСТ-21"
+  }
+]

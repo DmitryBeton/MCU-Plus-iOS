@@ -14,6 +14,6 @@ struct MGPUPlusApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: Task.self)
+        .modelContainer(for: [Task.self, ScheduleEvent.self])
     }
 }

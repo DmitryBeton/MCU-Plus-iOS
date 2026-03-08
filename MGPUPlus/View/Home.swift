@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct Home: View {
+    @Environment(\.modelContext) private var modelContext
     // Task Manager Properties
     @State private var currentDate: Date = .init()
     @State private var weekSlider: [[Date.WeekDay]] = []
     @State private var currentWeekIndex: Int = 1
     @State private var createWeek: Bool = false
+    @State private var suppressWeekIndexObserver: Bool = false
     @State private var createNewTask: Bool = false
     // Animation Namespace
     @Namespace private var animation
@@ -28,7 +31,8 @@ struct Home: View {
                 .hSpacing(.center)
                 .vSpacing(.center)
             }
-                .scrollIndicators(.hidden)
+            .scrollIndicators(.hidden)
+            .simultaneousGesture(daySwipeGesture)
         })
         .vSpacing(.top)
         .overlay(alignment: .bottomTrailing, content: {
@@ -58,6 +62,9 @@ struct Home: View {
                 }
             }
         })
+        .task(id: currentDate) {
+            await ScheduleSyncService.sync(for: currentDate, context: modelContext)
+        }
         .sheet(isPresented: $createNewTask, content: {
             NewTaskView()
                 .presentationDetents([.height(300)])
@@ -113,6 +120,10 @@ struct Home: View {
         .padding(15)
         .background(.white)
         .onChange(of: currentWeekIndex, initial: false) { oldValue, newValue in
+            if suppressWeekIndexObserver {
+                return
+            }
+            
             // Creating When it reaches first/last Page
             if newValue == 0 || newValue == (weekSlider.count - 1) {
                 createWeek = true
@@ -203,6 +214,67 @@ struct Home: View {
             }
 
         }
+    }
+    
+    private var daySwipeGesture: some Gesture {
+        DragGesture(minimumDistance: 20)
+            .onEnded { value in
+                let horizontal = value.translation.width
+                let vertical = value.translation.height
+                
+                guard abs(horizontal) > abs(vertical), abs(horizontal) > 40 else {
+                    return
+                }
+                
+                if horizontal < 0 {
+                    moveDay(by: 1)
+                } else {
+                    moveDay(by: -1)
+                }
+            }
+    }
+    
+    private func moveDay(by value: Int) {
+        guard let nextDate = Calendar.current.date(byAdding: .day, value: value, to: currentDate) else {
+            return
+        }
+        
+        if weekSlider.firstIndex(where: { week in
+            week.contains(where: { isSameDate($0.date, nextDate) })
+        }) == nil {
+            paginateWeekManually(direction: value)
+        }
+        
+        guard let targetWeekIndex = weekSlider.firstIndex(where: { week in
+            week.contains(where: { isSameDate($0.date, nextDate) })
+        }) else {
+            return
+        }
+
+        withAnimation(.snappy) {
+            currentDate = nextDate
+            setCurrentWeekIndex(targetWeekIndex)
+        }
+    }
+    
+    private func paginateWeekManually(direction: Int) {
+        guard !weekSlider.isEmpty else { return }
+        
+        if direction < 0 {
+            setCurrentWeekIndex(0)
+            paginateWeek()
+        } else if direction > 0 {
+            setCurrentWeekIndex(weekSlider.count - 1)
+            paginateWeek()
+        }
+        
+        createWeek = false
+    }
+    
+    private func setCurrentWeekIndex(_ index: Int) {
+        suppressWeekIndexObserver = true
+        currentWeekIndex = index
+        suppressWeekIndexObserver = false
     }
 }
 

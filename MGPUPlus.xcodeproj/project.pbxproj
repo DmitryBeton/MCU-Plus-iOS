@@ -20,22 +20,11 @@
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		8CFE34692F4112230081CC09 /* Exceptions for "MGPUPlus" folder in "Copy Bundle Resources" phase from "MGPUPlus" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = 8CCAAE6B2F3D0FDF0052180D /* Resources */;
-			membershipExceptions = (
-				AppColors.swift,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		8CCAAE6F2F3D0FE00052180D /* MGPUPlus */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
 				8CFE34682F4112230081CC09 /* Exceptions for "MGPUPlus" folder in "MGPUPlus" target */,
-				8CFE34692F4112230081CC09 /* Exceptions for "MGPUPlus" folder in "Copy Bundle Resources" phase from "MGPUPlus" target */,
 			);
 			path = MGPUPlus;
 			sourceTree = "<group>";
