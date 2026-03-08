@@ -14,12 +14,13 @@ struct ScheduleDTO {
     let endAt: Date
     let teacher: String
     let room: String
+    let facultyName: String
     let groupName: String
     let academicStatus: ScheduleAcademicStatus
 }
 
 protocol ScheduleDataSource {
-    func fetchSchedule(for date: Date) async throws -> [ScheduleDTO]
+    func fetchSchedule(for date: Date, facultyName: String, groupName: String) async throws -> [ScheduleDTO]
 }
 
 enum ScheduleDataSourceError: LocalizedError {

@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("selectedFaculty") private var selectedFaculty: String = ""
+    @AppStorage("selectedGroup") private var selectedGroup: String = ""
+
     var body: some View {
-        TabView {
-            Tab("tab.schedule", systemImage: "calendar") {
-                Home()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(.mcuBackground)
-                    .preferredColorScheme(.light)
+        if hasSelectedProfile {
+            TabView {
+                Tab("tab.schedule", systemImage: "calendar") {
+                    Home(selectedFaculty: selectedFaculty, selectedGroup: selectedGroup)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                        .background(.mcuBackground)
+                        .preferredColorScheme(.light)
+                }
             }
-//            Tab("tab.settings", systemImage: "gearshape") {
-//            }
+            .tint(.mcuRed)
+        } else {
+            OnboardingView()
         }
-        .tint(.mcuRed)
+    }
+
+    private var hasSelectedProfile: Bool {
+        !selectedFaculty.isEmpty && !selectedGroup.isEmpty
     }
 }

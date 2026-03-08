@@ -10,23 +10,27 @@ import SwiftData
 
 struct Home: View {
     @Environment(\.modelContext) private var modelContext
-    // Task Manager Properties
+
+    let selectedFaculty: String
+    let selectedGroup: String
+
     @State private var currentDate: Date = .init()
     @State private var weekSlider: [[Date.WeekDay]] = []
     @State private var currentWeekIndex: Int = 1
     @State private var createWeek: Bool = false
     @State private var suppressWeekIndexObserver: Bool = false
     @State private var createNewTask: Bool = false
-    // Animation Namespace
+    @State private var showProfileEditor: Bool = false
+
     @Namespace private var animation
+
     var body: some View {
         VStack(alignment: .leading, spacing: 0, content: {
             HeaderView()
 
             ScrollView(.vertical) {
                 VStack {
-                    // Tasks View
-                    TasksView(currentDate: $currentDate)
+                    TasksView(currentDate: $currentDate, selectedGroup: selectedGroup)
                 }
                 .hSpacing(.center)
                 .vSpacing(.center)
@@ -62,8 +66,13 @@ struct Home: View {
                 }
             }
         })
-        .task(id: currentDate) {
-            await ScheduleSyncService.sync(for: currentDate, context: modelContext)
+        .task(id: "\(selectedFaculty)-\(selectedGroup)-\(Calendar.current.startOfDay(for: currentDate).timeIntervalSince1970)") {
+            await ScheduleSyncService.sync(
+                for: currentDate,
+                facultyName: selectedFaculty,
+                groupName: selectedGroup,
+                context: modelContext
+            )
         }
         .sheet(isPresented: $createNewTask, content: {
             NewTaskView()
@@ -72,13 +81,14 @@ struct Home: View {
                 .presentationCornerRadius(30)
                 .presentationBackground(.mcuBackground)
         })
+        .sheet(isPresented: $showProfileEditor) {
+            OnboardingView()
+        }
     }
 
-    // Header View
     @ViewBuilder
     func HeaderView() -> some View {
         VStack(alignment: .leading, spacing: 6) {
-
             HStack(spacing: 5) {
                 Text(currentDate.format("MMMM"))
                     .foregroundStyle(.mcuRed)
@@ -94,7 +104,10 @@ struct Home: View {
                 .textScale(.secondary)
                 .foregroundStyle(.gray)
 
-            // Week Slider
+            Text("\(selectedFaculty) · \(selectedGroup)")
+                .font(.caption)
+                .foregroundStyle(.gray)
+
             TabView(selection: $currentWeekIndex) {
                 ForEach(weekSlider.indices, id: \.self) { index in
                     let week = weekSlider[index]
@@ -109,30 +122,43 @@ struct Home: View {
         }
         .hSpacing(.leading)
         .overlay(alignment: .topTrailing, content: {
-            Button(action: {}, label: {
-                Image(systemName: "person.fill")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
+            Button(action: {
+                showProfileEditor = true
+            }, label: {
+                instituteLogoView
                     .frame(width: 45, height: 45)
+                    .background(.white, in: .circle)
                     .clipShape(.circle)
             })
         })
         .padding(15)
         .background(.white)
-        .onChange(of: currentWeekIndex, initial: false) { oldValue, newValue in
+        .onChange(of: currentWeekIndex, initial: false) { _, newValue in
             if suppressWeekIndexObserver {
                 return
             }
-            
-            // Creating When it reaches first/last Page
+
             if newValue == 0 || newValue == (weekSlider.count - 1) {
                 createWeek = true
-
             }
         }
     }
 
-    // Week View
+    @ViewBuilder
+    private var instituteLogoView: some View {
+        if let logoName = StudyCatalog.logoAssetName(for: selectedFaculty), UIImage(named: logoName) != nil {
+            Image(logoName)
+                .resizable()
+                .scaledToFill()
+        } else {
+            Image(systemName: "person.fill")
+                .resizable()
+                .scaledToFit()
+                .padding(10)
+                .foregroundStyle(.mcuGrey)
+        }
+    }
+
     @ViewBuilder
     func WeekView(_ week: [Date.WeekDay]) -> some View {
         HStack(spacing: 0) {
@@ -157,7 +183,6 @@ struct Home: View {
                                     .matchedGeometryEffect(id: "TABINDICATOR", in: animation)
                             }
 
-                            // Indicator to Show, Which is Today's Date
                             if day.date.isToday {
                                 Circle()
                                     .fill(.red)
@@ -167,12 +192,10 @@ struct Home: View {
                             }
                         })
                         .background(.white.shadow(.drop(radius: 1)), in: .circle)
-
                 }
                 .hSpacing(.center)
                 .contentShape(.rect)
                 .onTapGesture {
-                    // Updating Current Date
                     withAnimation(.snappy) {
                         currentDate = day.date
                     }
@@ -186,7 +209,6 @@ struct Home: View {
                 Color.clear
                     .preference(key: OffsetKey.self, value: minX)
                     .onPreferenceChange(OffsetKey.self) { value in
-                        // When the Offset reaches 15 and if the createWeek is toggled then Simply generating next set of week
                         if value.rounded() == 15 && createWeek {
                             paginateWeek()
                             createWeek = false
@@ -197,31 +219,27 @@ struct Home: View {
     }
 
     func paginateWeek() {
-        // SafeCheck
         if weekSlider.indices.contains(currentWeekIndex) {
             if let firstDate = weekSlider[currentWeekIndex].first?.date, currentWeekIndex == 0 {
-                // Inserting New Week at 0th Index and Removing Last Array Item
                 weekSlider.insert(firstDate.createPreviousWeek(), at: 0)
                 weekSlider.removeLast()
                 currentWeekIndex = 1
             }
 
             if let lastDate = weekSlider[currentWeekIndex].last?.date, currentWeekIndex == (weekSlider.count - 1) {
-                // Appending New Week at Last Index and Removing First Array Item
                 weekSlider.append(lastDate.createNextWeek())
                 weekSlider.removeFirst()
                 currentWeekIndex = weekSlider.count - 2
             }
-
         }
     }
-    
+
     private var daySwipeGesture: some Gesture {
         DragGesture(minimumDistance: 20)
             .onEnded { value in
                 let horizontal = value.translation.width
                 let vertical = value.translation.height
-                
+
                 guard abs(vertical) < 50 else {
                     return
                 }
@@ -229,7 +247,7 @@ struct Home: View {
                 guard abs(horizontal) > 50, abs(horizontal) > abs(vertical) * 1.5 else {
                     return
                 }
-                
+
                 if horizontal < 0 {
                     moveDay(by: 1)
                 } else {
@@ -237,18 +255,18 @@ struct Home: View {
                 }
             }
     }
-    
+
     private func moveDay(by value: Int) {
         guard let nextDate = Calendar.current.date(byAdding: .day, value: value, to: currentDate) else {
             return
         }
-        
+
         if weekSlider.firstIndex(where: { week in
             week.contains(where: { isSameDate($0.date, nextDate) })
         }) == nil {
             paginateWeekManually(direction: value)
         }
-        
+
         guard let targetWeekIndex = weekSlider.firstIndex(where: { week in
             week.contains(where: { isSameDate($0.date, nextDate) })
         }) else {
@@ -260,10 +278,10 @@ struct Home: View {
             setCurrentWeekIndex(targetWeekIndex)
         }
     }
-    
+
     private func paginateWeekManually(direction: Int) {
         guard !weekSlider.isEmpty else { return }
-        
+
         if direction < 0 {
             setCurrentWeekIndex(0)
             paginateWeek()
@@ -271,10 +289,10 @@ struct Home: View {
             setCurrentWeekIndex(weekSlider.count - 1)
             paginateWeek()
         }
-        
+
         createWeek = false
     }
-    
+
     private func setCurrentWeekIndex(_ index: Int) {
         suppressWeekIndexObserver = true
         currentWeekIndex = index

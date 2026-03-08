@@ -10,11 +10,14 @@ import SwiftData
 
 struct TasksView: View {
     @Binding var currentDate: Date
+    let selectedGroup: String
+
     @Query private var tasks: [Task]
     @Query private var scheduleEvents: [ScheduleEvent]
 
-    init(currentDate: Binding<Date>) {
+    init(currentDate: Binding<Date>, selectedGroup: String) {
         self._currentDate = currentDate
+        self.selectedGroup = selectedGroup
 
         let calendar = Calendar.current
         let startOfDate = calendar.startOfDay(for: currentDate.wrappedValue)
@@ -29,7 +32,7 @@ struct TasksView: View {
         self._tasks = Query(filter: taskPredicate, sort: taskSortDescriptor, animation: .snappy)
 
         let eventPredicate = #Predicate<ScheduleEvent> {
-            $0.startAt >= startOfDate && $0.startAt < endOfDate
+            $0.startAt >= startOfDate && $0.startAt < endOfDate && $0.groupName == selectedGroup
         }
         let eventSortDescriptor = [
             SortDescriptor(\ScheduleEvent.startAt, order: .forward)

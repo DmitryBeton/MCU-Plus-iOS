@@ -5,23 +5,33 @@ import SwiftData
 enum ScheduleSyncService {
     static func sync(
         for date: Date,
+        facultyName: String,
+        groupName: String,
         context: ModelContext
     ) async {
-        await sync(for: date, context: context, dataSource: MockScheduleDataSource())
+        await sync(
+            for: date,
+            facultyName: facultyName,
+            groupName: groupName,
+            context: context,
+            dataSource: MockScheduleDataSource()
+        )
     }
 
     static func sync(
         for date: Date,
+        facultyName: String,
+        groupName: String,
         context: ModelContext,
         dataSource: ScheduleDataSource
     ) async {
         do {
-            let remoteEvents = try await dataSource.fetchSchedule(for: date)
+            let remoteEvents = try await dataSource.fetchSchedule(for: date, facultyName: facultyName, groupName: groupName)
             let startOfDay = Calendar.current.startOfDay(for: date)
             let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay) ?? startOfDay
 
             let predicate = #Predicate<ScheduleEvent> {
-                $0.startAt >= startOfDay && $0.startAt < endOfDay
+                $0.startAt >= startOfDay && $0.startAt < endOfDay && $0.groupName == groupName
             }
             let descriptor = FetchDescriptor<ScheduleEvent>(predicate: predicate)
             let localEvents = try context.fetch(descriptor)
@@ -37,6 +47,7 @@ enum ScheduleSyncService {
                     local.endAt = remote.endAt
                     local.teacher = remote.teacher
                     local.room = remote.room
+                    local.facultyName = remote.facultyName
                     local.groupName = remote.groupName
                     local.academicStatus = remote.academicStatus
                     local.updatedAt = Date()
@@ -48,6 +59,7 @@ enum ScheduleSyncService {
                         endAt: remote.endAt,
                         teacher: remote.teacher,
                         room: remote.room,
+                        facultyName: remote.facultyName,
                         groupName: remote.groupName,
                         academicStatusRaw: remote.academicStatus.rawValue,
                         updatedAt: Date()

@@ -7,7 +7,7 @@ struct MockScheduleDataSource: ScheduleDataSource {
         self.resourceName = resourceName
     }
 
-    func fetchSchedule(for date: Date) async throws -> [ScheduleDTO] {
+    func fetchSchedule(for date: Date, facultyName: String, groupName: String) async throws -> [ScheduleDTO] {
         guard let url = Bundle.main.url(forResource: resourceName, withExtension: "json") else {
             throw ScheduleDataSourceError.mockFileNotFound
         }
@@ -20,7 +20,9 @@ struct MockScheduleDataSource: ScheduleDataSource {
             return []
         }
 
-        return day.lessons.compactMap { lesson in
+        let lessons = day.lessons.filter { $0.facultyName == facultyName && $0.groupName == groupName }
+
+        return lessons.compactMap { lesson in
             guard let startAt = makeDate(dateString: day.date, timeString: lesson.startTime) else {
                 return nil
             }
@@ -35,6 +37,7 @@ struct MockScheduleDataSource: ScheduleDataSource {
                 endAt: endAt,
                 teacher: lesson.teacher,
                 room: lesson.room,
+                facultyName: lesson.facultyName,
                 groupName: lesson.groupName,
                 academicStatus: ScheduleAcademicStatus(rawValue: lesson.academicStatus) ?? .active
             )
@@ -78,6 +81,7 @@ private struct MockLessonDTO: Decodable {
     let endTime: String
     let teacher: String
     let room: String
+    let facultyName: String
     let groupName: String
     let academicStatus: String
 }

@@ -10,6 +10,7 @@ final class ScheduleEvent: Identifiable {
     var endAt: Date
     var teacher: String
     var room: String
+    var facultyName: String?
     var groupName: String
     var academicStatusRaw: String?
     var updatedAt: Date
@@ -22,6 +23,7 @@ final class ScheduleEvent: Identifiable {
         endAt: Date,
         teacher: String,
         room: String,
+        facultyName: String? = nil,
         groupName: String,
         academicStatusRaw: String? = ScheduleAcademicStatus.active.rawValue,
         updatedAt: Date = Date()
@@ -33,6 +35,7 @@ final class ScheduleEvent: Identifiable {
         self.endAt = endAt
         self.teacher = teacher
         self.room = room
+        self.facultyName = facultyName
         self.groupName = groupName
         self.academicStatusRaw = academicStatusRaw
         self.updatedAt = updatedAt
