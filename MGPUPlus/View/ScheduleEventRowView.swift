@@ -22,7 +22,7 @@ struct ScheduleEventRowView: View {
                 .fill(indicatorFillColor)
                 .frame(width: 10, height: 10)
                 .padding(4)
-                .background(.white.shadow(.drop(color: .black.opacity(0.1), radius: 3)), in: .circle)
+                .background(Color(uiColor: .secondarySystemBackground).shadow(.drop(color: .black.opacity(0.1), radius: 3)), in: .circle)
                 .overlay {
                     Circle()
                         .stroke(status == .current ? .mcuRed : .clear, lineWidth: status == .current ? 2 : 0)
@@ -32,7 +32,7 @@ struct ScheduleEventRowView: View {
                 HStack(alignment: .top, spacing: 8) {
                     Text(event.title)
                         .fontWeight(.semibold)
-                        .foregroundStyle(.black)
+                        .foregroundStyle(Color(uiColor: .label))
                     
                     Spacer(minLength: 8)
 
@@ -54,7 +54,7 @@ struct ScheduleEventRowView: View {
 
                 Text("\(event.teacher) · \(event.room)")
                     .font(.caption)
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(Color(uiColor: .secondaryLabel))
             }
             .padding(15)
             .hSpacing(.leading)

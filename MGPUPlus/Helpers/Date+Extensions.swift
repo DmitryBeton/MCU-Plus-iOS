@@ -10,10 +10,19 @@ import SwiftUI
 // Date Extension Needed for Building UI
 extension Date {
     // Custom Date Format
-    func format(_ format: String) -> String {
+    func format(_ format: String, locale: Locale = .autoupdatingCurrent) -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = format
+        formatter.locale = locale
 
+        return formatter.string(from: self)
+    }
+
+    func localizedFullDate(locale: Locale = .autoupdatingCurrent) -> String {
+        let formatter = DateFormatter()
+        formatter.locale = locale
+        formatter.dateStyle = .full
+        formatter.timeStyle = .none
         return formatter.string(from: self)
     }
 

@@ -18,7 +18,7 @@ struct TaskRowView: View {
                 .fill(indicatorColor)
                 .frame(width: 10, height: 10)
                 .padding(4)
-                .background(.white.shadow(.drop(color: .black.opacity(0.1), radius: 3)), in: .circle)
+                .background(Color(uiColor: .secondarySystemBackground).shadow(.drop(color: .black.opacity(0.1), radius: 3)), in: .circle)
                 .overlay {
                     Circle()
                         .frame(width: 50, height: 50)
@@ -33,16 +33,16 @@ struct TaskRowView: View {
             VStack(alignment: .leading, spacing: 8, content: {
                 Text(task.taskTitle)
                     .fontWeight(.semibold)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(Color(uiColor: .label))
 
                 Label(task.creationDate.format("hh:mm a"), systemImage: "clock")
                     .font(.caption)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(Color(uiColor: .label))
             })
             .padding(15)
             .hSpacing(.leading)
             .background(task.tintColor, in: .rect(topLeadingRadius: 15, bottomLeadingRadius: 15))
-            .strikethrough(task.isCompleted, pattern: .solid, color: .black)
+            .strikethrough(task.isCompleted, pattern: .solid, color: Color(uiColor: .label))
             .contentShape(.contextMenuPreview, .rect(cornerRadius: 15))
             .contextMenu {
                 Button("task.delete", role: .destructive) {
@@ -59,7 +59,7 @@ struct TaskRowView: View {
         if task.isCompleted {
             return .green
         }
-        return task.creationDate.isSameHour ? .mcuRed : (task.creationDate.isPast ? .red : .black)
+        return task.creationDate.isSameHour ? .mcuRed : (task.creationDate.isPast ? .red : Color(uiColor: .label))
     }
 }
 

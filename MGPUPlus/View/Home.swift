@@ -10,6 +10,7 @@ import SwiftData
 
 struct Home: View {
     @Environment(\.modelContext) private var modelContext
+    @AppStorage("appLanguage") private var appLanguage: String = "ru"
 
     let selectedFaculty: String
     let selectedGroup: String
@@ -90,23 +91,23 @@ struct Home: View {
     func HeaderView() -> some View {
         VStack(alignment: .leading, spacing: 6) {
             HStack(spacing: 5) {
-                Text(currentDate.format("MMMM"))
+                Text(currentDate.format("MMMM", locale: appLocale))
                     .foregroundStyle(.mcuRed)
 
-                Text(currentDate.format("YYYY"))
-                    .foregroundStyle(.gray)
+                Text(currentDate.format("yyyy", locale: appLocale))
+                    .foregroundStyle(Color(uiColor: .secondaryLabel))
             }
             .font(.title.bold())
 
-            Text(currentDate.formatted(date: .complete, time: .omitted))
+            Text(currentDate.localizedFullDate(locale: appLocale))
                 .font(.callout)
                 .fontWeight(.semibold)
                 .textScale(.secondary)
-                .foregroundStyle(.gray)
+                .foregroundStyle(Color(uiColor: .secondaryLabel))
 
             Text("\(selectedFaculty) · \(selectedGroup)")
                 .font(.caption)
-                .foregroundStyle(.gray)
+                .foregroundStyle(Color(uiColor: .secondaryLabel))
 
             TabView(selection: $currentWeekIndex) {
                 ForEach(weekSlider.indices, id: \.self) { index in
@@ -127,12 +128,12 @@ struct Home: View {
             }, label: {
                 instituteLogoView
                     .frame(width: 45, height: 45)
-                    .background(.white, in: .circle)
+                    .background(Color(uiColor: .secondarySystemBackground), in: .circle)
                     .clipShape(.circle)
             })
         })
         .padding(15)
-        .background(.white)
+        .background(Color(uiColor: .systemBackground))
         .onChange(of: currentWeekIndex, initial: false) { _, newValue in
             if suppressWeekIndexObserver {
                 return
@@ -155,7 +156,7 @@ struct Home: View {
                 .resizable()
                 .scaledToFit()
                 .padding(10)
-                .foregroundStyle(.mcuGrey)
+                .foregroundStyle(Color(uiColor: .secondaryLabel))
         }
     }
 
@@ -164,17 +165,17 @@ struct Home: View {
         HStack(spacing: 0) {
             ForEach(week) { day in
                 VStack(spacing: 8) {
-                    Text(day.date.format("E"))
+                    Text(day.date.format("E", locale: appLocale))
                         .font(.callout)
                         .fontWeight(.medium)
                         .textScale(.secondary)
-                        .foregroundStyle(.gray)
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
 
                     Text(day.date.format("dd"))
                         .font(.callout)
                         .fontWeight(.bold)
                         .textScale(.secondary)
-                        .foregroundStyle(isSameDate(day.date, currentDate) ? .white : .gray)
+                        .foregroundStyle(isSameDate(day.date, currentDate) ? .white : Color(uiColor: .secondaryLabel))
                         .frame(width: 35, height: 35)
                         .background(content: {
                             if isSameDate(day.date, currentDate) {
@@ -191,7 +192,7 @@ struct Home: View {
                                     .offset(y: 12)
                             }
                         })
-                        .background(.white.shadow(.drop(radius: 1)), in: .circle)
+                        .background(Color(uiColor: .secondarySystemBackground).shadow(.drop(radius: 1)), in: .circle)
                 }
                 .hSpacing(.center)
                 .contentShape(.rect)
@@ -297,6 +298,10 @@ struct Home: View {
         suppressWeekIndexObserver = true
         currentWeekIndex = index
         suppressWeekIndexObserver = false
+    }
+
+    private var appLocale: Locale {
+        Locale(identifier: appLanguage)
     }
 }
 

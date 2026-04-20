@@ -28,12 +28,12 @@ struct OnboardingView: View {
 
             Text("onboarding.subtitle")
                 .font(.callout)
-                .foregroundStyle(.gray)
+                .foregroundStyle(Color(uiColor: .secondaryLabel))
 
             VStack(alignment: .leading, spacing: 8) {
                 Text("onboarding.faculty")
                     .font(.caption)
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(Color(uiColor: .secondaryLabel))
 
                 Picker("onboarding.faculty", selection: $selectedFaculty) {
                     ForEach(StudyCatalog.faculties) { faculty in
@@ -43,13 +43,13 @@ struct OnboardingView: View {
                 .pickerStyle(.menu)
                 .padding(.horizontal, 14)
                 .padding(.vertical, 12)
-                .background(.white, in: RoundedRectangle(cornerRadius: 10))
+                .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 10))
             }
 
             VStack(alignment: .leading, spacing: 8) {
                 Text("onboarding.group")
                     .font(.caption)
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(Color(uiColor: .secondaryLabel))
 
                 Picker("onboarding.group", selection: $selectedGroup) {
                     ForEach(availableGroups, id: \.self) { group in
@@ -59,7 +59,7 @@ struct OnboardingView: View {
                 .pickerStyle(.menu)
                 .padding(.horizontal, 14)
                 .padding(.vertical, 12)
-                .background(.white, in: RoundedRectangle(cornerRadius: 10))
+                .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 10))
             }
 
             Spacer(minLength: 0)
@@ -68,14 +68,14 @@ struct OnboardingView: View {
                 Text("onboarding.continue")
                     .font(.title3)
                     .fontWeight(.semibold)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(Color(uiColor: .label))
                     .hSpacing(.center)
                     .padding(.vertical, 12)
                     .background(.mcuRed.opacity(0.55), in: .rect(cornerRadius: 10))
             })
         }
         .padding(20)
-        .background(.mcuBackground)
+        .background(Color(uiColor: .systemGroupedBackground))
         .onChange(of: selectedFaculty, initial: false) { _, _ in
             if !availableGroups.contains(selectedGroup) {
                 selectedGroup = availableGroups.first ?? ""

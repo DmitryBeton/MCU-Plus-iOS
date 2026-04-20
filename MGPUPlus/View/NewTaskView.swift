@@ -29,12 +29,16 @@ struct NewTaskView: View {
             VStack(alignment: .leading, spacing: 8, content: {
                 Text("task.title.label")
                     .font(.caption)
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(Color(uiColor: .secondaryLabel))
 
                 TextField("task.title.placeholder", text: $taskTitle)
                     .padding(.vertical, 12)
                     .padding(.horizontal, 15)
-                    .background(.white.shadow(.drop(color: .black.opacity(0.25), radius: 2)), in: .rect(cornerRadius: 10))
+                    .background(
+                        Color(uiColor: .secondarySystemBackground)
+                            .shadow(.drop(color: .black.opacity(0.15), radius: 2)),
+                        in: .rect(cornerRadius: 10)
+                    )
             })
             .padding(.top, 5)
 
@@ -42,7 +46,7 @@ struct NewTaskView: View {
                 VStack(alignment: .leading, spacing: 8, content: {
                     Text("task.date.label")
                         .font(.caption)
-                        .foregroundStyle(.gray)
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
 
                     DatePicker("", selection: $taskDate)
                         .datePickerStyle(.compact)
@@ -55,7 +59,7 @@ struct NewTaskView: View {
                 VStack(alignment: .leading, spacing: 8, content: {
                     Text("task.color.label")
                         .font(.caption)
-                        .foregroundStyle(.gray)
+                        .foregroundStyle(Color(uiColor: .secondaryLabel))
 
                     let colors: [String] = (1...5).compactMap { index -> String in
                         return "TaskColor\(index)"
@@ -103,7 +107,7 @@ struct NewTaskView: View {
                     .font(.title3)
                     .fontWeight(.semibold)
                     .textScale(.secondary)
-                    .foregroundStyle(.black)
+                    .foregroundStyle(Color(uiColor: .label))
                     .hSpacing(.center)
                     .padding(.vertical, 12)
                     .background(Color(taskColor), in: .rect(cornerRadius: 10))
@@ -112,6 +116,7 @@ struct NewTaskView: View {
             .opacity(taskTitle == "" ? 0.5 : 1)
         })
         .padding(15)
+        .background(Color(uiColor: .systemGroupedBackground))
     }
 }
 

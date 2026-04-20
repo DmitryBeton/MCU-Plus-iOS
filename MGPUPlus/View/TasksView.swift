@@ -56,6 +56,7 @@ struct TasksView: View {
                         .background(alignment: .leading) {
                             if scheduleEvents.last?.id != event.id {
                                 Rectangle()
+                                    .foregroundStyle(Color(uiColor: .separator))
                                     .frame(width: 1)
                                     .offset(x: 8)
                                     .padding(.bottom, -20)
@@ -77,6 +78,7 @@ struct TasksView: View {
                             .background(alignment: .leading) {
                                 if tasks.last?.id != task.id {
                                     Rectangle()
+                                        .foregroundStyle(Color(uiColor: .separator))
                                         .frame(width: 1)
                                         .offset(x: 8)
                                         .padding(.bottom, -35)
@@ -92,7 +94,7 @@ struct TasksView: View {
             if tasks.isEmpty && scheduleEvents.isEmpty {
                 Text("schedule.empty")
                     .font(.caption)
-                    .foregroundStyle(.gray)
+                    .foregroundStyle(Color(uiColor: .secondaryLabel))
                     .frame(width: 170)
             }
         }
