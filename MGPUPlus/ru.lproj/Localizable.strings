@@ -5,6 +5,10 @@
 "news.error.parse" = "Не удалось разобрать страницу новостей";
 "news.retry" = "Повторить";
 "news.empty" = "Новости не найдены";
+"news.detail.title" = "Новость";
+"news.detail.loading" = "Загружаем новость";
+"news.detail.open_source" = "Открыть оригинал";
+"news.detail.empty" = "Не удалось получить текст новости";
 "tab.schedule" = "Расписание";
 "tab.settings" = "Настройки";
 "onboarding.title" = "Добро пожаловать";

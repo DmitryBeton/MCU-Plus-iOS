@@ -5,6 +5,10 @@
 "news.error.parse" = "Could not parse the news page";
 "news.retry" = "Retry";
 "news.empty" = "No news found";
+"news.detail.title" = "Article";
+"news.detail.loading" = "Loading article";
+"news.detail.open_source" = "Open original";
+"news.detail.empty" = "Could not get the article text";
 "tab.schedule" = "Schedule";
 "tab.settings" = "Settings";
 "onboarding.title" = "Welcome";

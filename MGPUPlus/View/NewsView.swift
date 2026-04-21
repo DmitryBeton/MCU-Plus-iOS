@@ -76,7 +76,9 @@ private struct NewsCardView: View {
     let item: NewsItem
 
     var body: some View {
-        Link(destination: item.articleURL) {
+        NavigationLink {
+            NewsDetailView(item: item)
+        } label: {
             VStack(alignment: .leading, spacing: 14) {
                 AsyncImage(url: item.imageURL) { phase in
                     switch phase {
