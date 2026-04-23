@@ -65,7 +65,7 @@
 1. Клонировать репозиторий:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/DmitryBeton/MCU-Plus.git
 ```
 
 2. Открыть проект в Xcode:
