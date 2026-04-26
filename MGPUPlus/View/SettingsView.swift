@@ -3,6 +3,7 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("appLanguage") private var appLanguage: String = "ru"
     @AppStorage("appTheme") private var appTheme: String = "light"
+    @AppStorage(BackendConfiguration.backendURLKey) private var backendBaseURL: String = BackendConfiguration.defaultBaseURLString
 
     @State private var showOnboarding: Bool = false
 
@@ -39,6 +40,17 @@ struct SettingsView: View {
                         }
                     })
                     .foregroundStyle(.primary)
+                }
+
+                Section("settings.backend.section") {
+                    TextField("settings.backend.placeholder", text: $backendBaseURL)
+                        .textInputAutocapitalization(.never)
+                        .keyboardType(.URL)
+                        .autocorrectionDisabled()
+
+                    Text("settings.backend.hint")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
                 }
             }
             .navigationTitle("tab.settings")

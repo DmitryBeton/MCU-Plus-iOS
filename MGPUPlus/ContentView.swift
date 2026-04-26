@@ -16,6 +16,7 @@ struct ContentView: View {
 
     @AppStorage("selectedFaculty") private var selectedFaculty: String = ""
     @AppStorage("selectedGroup") private var selectedGroup: String = ""
+    @AppStorage("selectedGroupId") private var selectedGroupId: Int = 0
     @AppStorage("appLanguage") private var appLanguage: String = "ru"
     @AppStorage("appTheme") private var appTheme: String = "light"
     @State private var selectedTab: TabSelection = .schedule
@@ -30,7 +31,7 @@ struct ContentView: View {
                         }
                         .tag(TabSelection.news)
 
-                    Home(selectedFaculty: selectedFaculty, selectedGroup: selectedGroup)
+                    Home(selectedFaculty: selectedFaculty, selectedGroup: selectedGroup, selectedGroupId: selectedGroupId)
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         .background(Color.appDarkGroupedBackground)
                         .tabItem {
@@ -54,7 +55,7 @@ struct ContentView: View {
     }
 
     private var hasSelectedProfile: Bool {
-        !selectedFaculty.isEmpty && !selectedGroup.isEmpty
+        !selectedFaculty.isEmpty && !selectedGroup.isEmpty && selectedGroupId > 0
     }
 
     private var preferredColorScheme: ColorScheme? {

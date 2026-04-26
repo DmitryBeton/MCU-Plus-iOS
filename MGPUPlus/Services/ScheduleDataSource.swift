@@ -20,16 +20,25 @@ struct ScheduleDTO {
 }
 
 protocol ScheduleDataSource {
-    func fetchSchedule(for date: Date, facultyName: String, groupName: String) async throws -> [ScheduleDTO]
+    func fetchSchedule(for date: Date, groupId: Int) async throws -> [ScheduleDTO]
 }
 
 enum ScheduleDataSourceError: LocalizedError {
     case mockFileNotFound
+    case invalidResponse
+    case invalidURL
+    case decodingFailed
 
     var errorDescription: String? {
         switch self {
         case .mockFileNotFound:
             return "Mock schedule JSON not found in bundle"
+        case .invalidResponse:
+            return "Invalid schedule API response"
+        case .invalidURL:
+            return "Invalid schedule API URL"
+        case .decodingFailed:
+            return "Failed to decode schedule API response"
         }
     }
 }

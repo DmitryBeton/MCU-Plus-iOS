@@ -5,33 +5,34 @@ import SwiftData
 enum ScheduleSyncService {
     static func sync(
         for date: Date,
-        facultyName: String,
+        groupId: Int,
         groupName: String,
         context: ModelContext
     ) async {
         await sync(
             for: date,
-            facultyName: facultyName,
+            groupId: groupId,
             groupName: groupName,
             context: context,
-            dataSource: MockScheduleDataSource()
+            dataSource: NetworkScheduleDataSource()
         )
     }
 
     static func sync(
         for date: Date,
-        facultyName: String,
+        groupId: Int,
         groupName: String,
         context: ModelContext,
         dataSource: ScheduleDataSource
     ) async {
         do {
-            let remoteEvents = try await dataSource.fetchSchedule(for: date, facultyName: facultyName, groupName: groupName)
+            let remoteEvents = try await dataSource.fetchSchedule(for: date, groupId: groupId)
+            let resolvedGroupName = remoteEvents.first?.groupName ?? groupName
             let startOfDay = Calendar.current.startOfDay(for: date)
             let endOfDay = Calendar.current.date(byAdding: .day, value: 1, to: startOfDay) ?? startOfDay
 
             let predicate = #Predicate<ScheduleEvent> {
-                $0.startAt >= startOfDay && $0.startAt < endOfDay && $0.groupName == groupName
+                $0.startAt >= startOfDay && $0.startAt < endOfDay && $0.groupName == resolvedGroupName
             }
             let descriptor = FetchDescriptor<ScheduleEvent>(predicate: predicate)
             let localEvents = try context.fetch(descriptor)

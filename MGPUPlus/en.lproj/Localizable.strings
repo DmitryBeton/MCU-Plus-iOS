@@ -16,6 +16,10 @@
 "onboarding.faculty" = "Faculty";
 "onboarding.group" = "Group";
 "onboarding.continue" = "Continue";
+"onboarding.loading" = "Loading institutes and groups";
+"onboarding.error.title" = "Could not load catalog";
+"onboarding.error.load" = "Check backend availability and server URL in settings";
+"onboarding.retry" = "Retry";
 "settings.language.section" = "Language";
 "settings.language.title" = "App Language";
 "settings.language.russian" = "Russian";
@@ -27,6 +31,10 @@
 "settings.theme.dark" = "Dark";
 "settings.study.section" = "Study Profile";
 "settings.study.change" = "Choose faculty and group";
+"settings.backend.section" = "Server";
+"settings.backend.placeholder" = "http://192.168.1.10:8000";
+"settings.backend.hint" = "For iPhone, enter your Mac local address on the same Wi‑Fi, for example http://192.168.1.10:8000";
+"settings.backend.error" = "Check the server URL in settings";
 "task.title.label" = "Note Title";
 "task.title.placeholder" = "Write notes for the lesson!";
 "task.date.label" = "Date";

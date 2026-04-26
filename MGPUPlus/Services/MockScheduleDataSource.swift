@@ -7,7 +7,7 @@ struct MockScheduleDataSource: ScheduleDataSource {
         self.resourceName = resourceName
     }
 
-    func fetchSchedule(for date: Date, facultyName: String, groupName: String) async throws -> [ScheduleDTO] {
+    func fetchSchedule(for date: Date, groupId: Int) async throws -> [ScheduleDTO] {
         guard let url = Bundle.main.url(forResource: resourceName, withExtension: "json") else {
             throw ScheduleDataSourceError.mockFileNotFound
         }
@@ -20,7 +20,7 @@ struct MockScheduleDataSource: ScheduleDataSource {
             return []
         }
 
-        let lessons = day.lessons.filter { $0.facultyName == facultyName && $0.groupName == groupName }
+        let lessons = day.lessons
 
         return lessons.compactMap { lesson in
             guard let startAt = makeDate(dateString: day.date, timeString: lesson.startTime) else {

@@ -16,6 +16,10 @@
 "onboarding.faculty" = "Факультет";
 "onboarding.group" = "Группа";
 "onboarding.continue" = "Продолжить";
+"onboarding.loading" = "Загружаем институты и группы";
+"onboarding.error.title" = "Не удалось загрузить каталог";
+"onboarding.error.load" = "Проверь доступность backend и адрес сервера в настройках";
+"onboarding.retry" = "Повторить";
 "settings.language.section" = "Язык";
 "settings.language.title" = "Язык приложения";
 "settings.language.russian" = "Русский";
@@ -27,6 +31,10 @@
 "settings.theme.dark" = "Темная";
 "settings.study.section" = "Профиль обучения";
 "settings.study.change" = "Выбрать институт и группу";
+"settings.backend.section" = "Сервер";
+"settings.backend.placeholder" = "http://192.168.1.10:8000";
+"settings.backend.hint" = "Для iPhone укажи локальный адрес Mac в одной Wi‑Fi сети, например http://192.168.1.10:8000";
+"settings.backend.error" = "Проверь адрес сервера в настройках";
 "task.title.label" = "Название заметки";
 "task.title.placeholder" = "Сделать конспект по ОРГ!";
 "task.date.label" = "Дата";

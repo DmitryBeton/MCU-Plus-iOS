@@ -14,6 +14,7 @@ struct Home: View {
 
     let selectedFaculty: String
     let selectedGroup: String
+    let selectedGroupId: Int
 
     @State private var currentDate: Date = .init()
     @State private var weekSlider: [[Date.WeekDay]] = []
@@ -67,10 +68,10 @@ struct Home: View {
                 }
             }
         })
-        .task(id: "\(selectedFaculty)-\(selectedGroup)-\(Calendar.current.startOfDay(for: currentDate).timeIntervalSince1970)") {
+        .task(id: "\(selectedGroupId)-\(Calendar.current.startOfDay(for: currentDate).timeIntervalSince1970)") {
             await ScheduleSyncService.sync(
                 for: currentDate,
-                facultyName: selectedFaculty,
+                groupId: selectedGroupId,
                 groupName: selectedGroup,
                 context: modelContext
             )
